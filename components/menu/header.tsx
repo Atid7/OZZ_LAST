@@ -46,19 +46,19 @@ export function Header({
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Left - Logo */}
-          <div className="flex items-center gap-2.5">
-            <div className="relative w-12 h-12 md:w-14 md:h-14">
+          <div className="flex items-center gap-3">
+            <div className="relative w-16 h-16 md:w-20 md:h-20">
               <Image
                 src={restaurant.logo || "/images/Log.png"}
                 alt={restaurant.name}
                 fill
-                sizes="(max-width: 768px) 48px, 56px"
+                sizes="(max-width: 768px) 64px, 80px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="hidden sm:block">
-              <span className="font-display text-lg tracking-wider text-foreground">
+              <span className="font-display text-2xl md:text-3xl tracking-wider text-foreground">
                 OZ FOOD
               </span>
             </div>
