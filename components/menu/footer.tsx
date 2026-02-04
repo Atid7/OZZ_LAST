@@ -43,14 +43,14 @@ export function Footer({ restaurant, language = "fr" }: FooterProps) {
             {/* Contact info */}
             <div className="flex flex-col gap-4">
               <a
-                href="https://maps.google.com/?q=49+rue+Lazare+Carnot+Saint-Etienne"
+                href="https://maps.google.com/?q=49+rue+Lazare+Carnot+saint-etienne-du-rouveray"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-white/80  hover:text-foreground transition-colors"
               >
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 <span className="text-sm">
-                  49 rue Lazare Carnot, Saint-Etienne
+                  49 rue Lazare Carnot, saint-etienne-du-rouveray
                 </span>
               </a>
               <a
@@ -106,7 +106,7 @@ export function Footer({ restaurant, language = "fr" }: FooterProps) {
               <p className="text-xs text-white/70">
                 {language === "fr" ? "Fait avec" : "Made with"}{" "}
                 <span className="text-primary">&#9829;</span>{" "}
-                {language === "fr" ? "à Saint-Etienne" : "in Saint-Etienne"}
+                {language === "fr" ? "à saint-etienne-du-rouveray" : "in saint-etienne-du-rouveray"}
               </p>
             </div>
           </div>

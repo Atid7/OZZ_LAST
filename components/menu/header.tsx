@@ -73,7 +73,7 @@ export function Header({
           >
             <div className="flex items-center gap-1.5 text-xs text-white/80">
               <MapPin className="w-3.5 h-3.5 text-primary" />
-              <span>Saint-Etienne</span>
+              <span>saint-etienne-du-rouveray</span>
             </div>
             <div className="h-3 w-px bg-border" />
             <div className="flex items-center gap-1.5 text-xs">
@@ -182,7 +182,7 @@ export function Header({
               <div className="flex flex-wrap items-center gap-2 mt-6 pt-6 border-t border-border/20">
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/40 backdrop-blur-sm text-xs">
                   <MapPin className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-foreground/70">Saint-Etienne</span>
+                  <span className="text-foreground/70">saint-etienne-du-rouveray</span>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/40 backdrop-blur-sm text-xs">
                   <Clock className="w-3.5 h-3.5 text-accent" />
