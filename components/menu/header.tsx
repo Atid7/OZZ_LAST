@@ -129,9 +129,9 @@ export function Header({
           <div className="container mx-auto">
             <div className="max-w-xl animate-fade-in-up">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/15 border border-primary/20 mb-5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                <span className="text-[10px] font-semibold tracking-wider text-primary uppercase">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary/15 border border-primary/20 mb-5">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-xs font-semibold tracking-wider text-primary uppercase">
                   {language === "fr"
                     ? "Viande cuite au feu de bois"
                     : "Wood-fired meat"}
