@@ -71,13 +71,13 @@ export function Header({
               isScrolled ? "opacity-100" : "opacity-0",
             )}
           >
-            <div className="flex items-center gap-1.5 text-xs text-white/80">
-              <MapPin className="w-3.5 h-3.5 text-primary" />
+            <div className="flex items-center gap-1.5 text-sm text-white/80">
+              <MapPin className="w-4 h-4 text-primary" />
               <span>saint-etienne-du-rouveray</span>
             </div>
             <div className="h-3 w-px bg-border" />
-            <div className="flex items-center gap-1.5 text-xs">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <div className="flex items-center gap-1.5 text-sm">
+              <div className="w-2 h-2 rounded-full bg-emerald-500" />
               <span className="text-emerald-400 font-medium">
                 {language === "fr" ? "Ouvert" : "Open"}
               </span>
@@ -180,18 +180,18 @@ export function Header({
 
               {/* Quick Info Pills */}
               <div className="flex flex-wrap items-center gap-2 mt-6 pt-6 border-t border-border/20">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/40 backdrop-blur-sm text-xs">
-                  <MapPin className="w-3.5 h-3.5 text-primary" />
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/40 backdrop-blur-sm text-sm">
+                  <MapPin className="w-4 h-4 text-primary" />
                   <span className="text-foreground/70">saint-etienne-du-rouveray</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/40 backdrop-blur-sm text-xs">
-                  <Clock className="w-3.5 h-3.5 text-accent" />
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/40 backdrop-blur-sm text-sm">
+                  <Clock className="w-4 h-4 text-accent" />
                   <span className="text-foreground/70">
                     {language === "fr" ? "7j/7 • 11h-14h, 18h-2h" : "7/7 • 11 AM–2 PM, 6 PM–2 AM"}
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-sm">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span className="text-emerald-400 font-medium">
                     {language === "fr" ? "En ligne" : "Online"}
                   </span>
