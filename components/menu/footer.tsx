@@ -64,8 +64,8 @@ export function Footer({ restaurant, language = "fr" }: FooterProps) {
                 <Clock className="w-4 h-4 text-primary shrink-0" />
                 <span className="text-sm">
                   {language === "fr"
-                    ? "Ouvert 6j/7 - Fermé le lundi"
-                    : "Open 6 days/week - Closed Monday"}
+                    ? "Ouvert 7j/7 • 11h-14h, 18h-2h"
+                    : "Open 7/7 • 11 AM–2 PM, 6 PM–2 AM"}
                 </span>
               </div>
             </div>

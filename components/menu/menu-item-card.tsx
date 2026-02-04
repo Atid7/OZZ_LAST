@@ -112,12 +112,12 @@ export function MenuItemCard({
 
           <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
             <div>
-              <h3 className="font-semibold text-foreground text-base leading-tight mb-1 line-clamp-1 drop-shadow-lg">
+              <h3 className="font-semibold text-foreground text-lg leading-tight mb-1 line-clamp-1 drop-shadow-lg">
                 {name}
               </h3>
               <div className="flex items-baseline gap-1">
-                <span className="text-xl font-bold text-primary drop-shadow-lg">{formatPrice(item.price)}</span>
-                <span className="text-xs text-foreground/70">{currency}</span>
+                <span className="text-2xl font-bold text-primary drop-shadow-lg">{formatPrice(item.price)}</span>
+                <span className="text-sm text-foreground/70">{currency}</span>
               </div>
             </div>
             <button
@@ -194,13 +194,13 @@ export function MenuItemCard({
       {/* Content section */}
       <div className="p-4">
         {/* Name */}
-        <h3 className="font-semibold text-foreground text-base leading-tight mb-1 line-clamp-1">
+        <h3 className="font-semibold text-foreground text-lg leading-tight mb-1.5 line-clamp-1">
           {name}
         </h3>
 
         {/* Description */}
         {description && (
-          <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">
+          <p className="text-base text-muted-foreground leading-relaxed mb-3 line-clamp-2">
             {description}
           </p>
         )}
@@ -209,14 +209,14 @@ export function MenuItemCard({
         {(item.isSpicy || item.isVegetarian) && (
           <div className="flex items-center gap-2 mb-3">
             {item.isSpicy && (
-              <span className="flex items-center gap-1 text-[11px] font-medium text-primary">
-                <Flame className="w-3.5 h-3.5" />
+              <span className="flex items-center gap-1 text-xs font-medium text-primary">
+                <Flame className="w-4 h-4" />
                 {language === "fr" ? "Piquant" : "Spicy"}
               </span>
             )}
             {item.isVegetarian && (
-              <span className="flex items-center gap-1 text-[11px] font-medium text-emerald-400">
-                <Leaf className="w-3.5 h-3.5" />
+              <span className="flex items-center gap-1 text-xs font-medium text-emerald-400">
+                <Leaf className="w-4 h-4" />
                 {language === "fr" ? "Végé" : "Veg"}
               </span>
             )}
@@ -226,8 +226,8 @@ export function MenuItemCard({
         {/* Price & Add button */}
         <div className="flex items-center justify-between pt-2 border-t border-border/30">
           <div className="flex items-baseline gap-1">
-            <span className="text-xl font-bold text-foreground">{formatPrice(item.price)}</span>
-            <span className="text-sm text-muted-foreground">{currency}</span>
+            <span className="text-2xl font-bold text-foreground">{formatPrice(item.price)}</span>
+            <span className="text-base text-muted-foreground">{currency}</span>
           </div>
 
           <button

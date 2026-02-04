@@ -38,10 +38,10 @@ export function MenuSection({ category, language }: MenuSectionProps) {
         {/* Section header */}
         <div className="flex items-end justify-between gap-4 mb-6">
           <div>
-            <h2 className="font-display text-2xl md:text-3xl text-foreground tracking-wide uppercase">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground tracking-wide uppercase">
               {name}
             </h2>
-            <p className="text-sm text-muted-foreground mt-1">
+            <p className="text-base text-muted-foreground mt-1">
               {category.items.length} {t.items}
             </p>
           </div>

@@ -187,7 +187,7 @@ export function Header({
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/40 backdrop-blur-sm text-xs">
                   <Clock className="w-3.5 h-3.5 text-accent" />
                   <span className="text-foreground/70">
-                    {language === "fr" ? "6j/7" : "6 days/week"}
+                    {language === "fr" ? "7j/7 • 11h-14h, 18h-2h" : "7/7 • 11 AM–2 PM, 6 PM–2 AM"}
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs">

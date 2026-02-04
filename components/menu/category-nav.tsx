@@ -51,7 +51,7 @@ export function CategoryNav({ categories, activeCategory, onCategoryChange, lang
                   ref={isActive ? activeRef : null}
                   onClick={() => onCategoryChange(category.id)}
                   className={cn(
-                    "relative px-4 py-2 whitespace-nowrap transition-all duration-300 font-medium text-sm rounded-full",
+                    "relative px-4 py-2 whitespace-nowrap transition-all duration-300 font-medium text-base rounded-full",
                     isActive
                       ? "bg-foreground text-background"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary"
