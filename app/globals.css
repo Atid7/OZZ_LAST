@@ -1,0 +1,678 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ========================================
+   OZ FOOD - Premium Street Food Experience
+   Design System v2.0
+   ======================================== */
+
+/* Color Philosophy:
+   - Deep black base with textured feel (like charcoal grill)
+   - Vibrant crimson red as primary (fire, passion, bold flavors)
+   - Warm amber/gold as accent (premium, appetizing)
+   - Clean whites and soft grays for contrast
+*/
+
+:root {
+  /* Base - Deep charcoal with warm undertones */
+  --background: oklch(0.08 0.01 30);
+  --foreground: oklch(0.97 0.005 60);
+  
+  /* Card surfaces - Layered depth */
+  --card: oklch(0.12 0.012 30);
+  --card-foreground: oklch(0.97 0.005 60);
+  
+  /* Popover - Slightly elevated */
+  --popover: oklch(0.14 0.014 30);
+  --popover-foreground: oklch(0.97 0.005 60);
+  
+  /* Primary - Fiery Crimson Red */
+  --primary: oklch(0.55 0.24 25);
+  --primary-foreground: oklch(0.98 0.005 60);
+  
+  /* Secondary - Warm dark surface */
+  --secondary: oklch(0.16 0.015 30);
+  --secondary-foreground: oklch(0.92 0.01 60);
+  
+  /* Muted - Subtle backgrounds */
+  --muted: oklch(0.18 0.01 30);
+  --muted-foreground: oklch(0.55 0.015 60);
+  
+  /* Accent - Golden Amber */
+  --accent: oklch(0.72 0.16 70);
+  --accent-foreground: oklch(0.12 0.02 30);
+  
+  /* Destructive */
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 60);
+  
+  /* Borders and inputs */
+  --border: oklch(0.22 0.015 30);
+  --input: oklch(0.14 0.012 30);
+  --ring: oklch(0.55 0.24 25);
+  
+  /* Charts */
+  --chart-1: oklch(0.55 0.24 25);
+  --chart-2: oklch(0.72 0.16 70);
+  --chart-3: oklch(0.55 0.18 160);
+  --chart-4: oklch(0.6 0.14 220);
+  --chart-5: oklch(0.65 0.12 280);
+  
+  /* Radius - More rounded for modern feel */
+  --radius: 1rem;
+  
+  /* Sidebar */
+  --sidebar: oklch(0.10 0.012 30);
+  --sidebar-foreground: oklch(0.97 0.005 60);
+  --sidebar-primary: oklch(0.55 0.24 25);
+  --sidebar-primary-foreground: oklch(0.98 0.005 60);
+  --sidebar-accent: oklch(0.16 0.015 30);
+  --sidebar-accent-foreground: oklch(0.97 0.005 60);
+  --sidebar-border: oklch(0.22 0.015 30);
+  --sidebar-ring: oklch(0.55 0.24 25);
+}
+
+.dark {
+  --background: oklch(0.08 0.01 30);
+  --foreground: oklch(0.97 0.005 60);
+  --card: oklch(0.12 0.012 30);
+  --card-foreground: oklch(0.97 0.005 60);
+  --popover: oklch(0.14 0.014 30);
+  --popover-foreground: oklch(0.97 0.005 60);
+  --primary: oklch(0.55 0.24 25);
+  --primary-foreground: oklch(0.98 0.005 60);
+  --secondary: oklch(0.16 0.015 30);
+  --secondary-foreground: oklch(0.92 0.01 60);
+  --muted: oklch(0.18 0.01 30);
+  --muted-foreground: oklch(0.55 0.015 60);
+  --accent: oklch(0.72 0.16 70);
+  --accent-foreground: oklch(0.12 0.02 30);
+  --border: oklch(0.22 0.015 30);
+  --input: oklch(0.14 0.012 30);
+  --ring: oklch(0.55 0.24 25);
+  --sidebar: oklch(0.10 0.012 30);
+  --sidebar-foreground: oklch(0.97 0.005 60);
+  --sidebar-primary: oklch(0.55 0.24 25);
+  --sidebar-primary-foreground: oklch(0.98 0.005 60);
+  --sidebar-accent: oklch(0.16 0.015 30);
+  --sidebar-accent-foreground: oklch(0.97 0.005 60);
+  --sidebar-border: oklch(0.22 0.015 30);
+  --sidebar-ring: oklch(0.55 0.24 25);
+}
+
+@theme inline {
+  /* Typography - Bold display + Clean body */
+  --font-sans: "DM Sans", "DM Sans Fallback", system-ui, sans-serif;
+  --font-display: var(--font-bebas), "Impact", "Arial Narrow", sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", monospace;
+  
+  /* Color tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* Radius tokens */
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 16px);
+  
+  /* Sidebar tokens */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar for visible areas */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: oklch(0.3 0.01 30);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.4 0.01 30);
+}
+
+/* ========================================
+   PREMIUM TEXT EFFECTS
+   ======================================== */
+
+/* Fire gradient text */
+.text-fire {
+  background: linear-gradient(
+    135deg,
+    oklch(0.55 0.24 25) 0%,
+    oklch(0.65 0.22 40) 50%,
+    oklch(0.72 0.16 70) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold shimmer text */
+.text-gold {
+  background: linear-gradient(
+    90deg,
+    oklch(0.72 0.16 70) 0%,
+    oklch(0.82 0.14 65) 50%,
+    oklch(0.72 0.16 70) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow text effect */
+.text-glow {
+  text-shadow: 
+    0 0 20px oklch(0.55 0.24 25 / 0.5),
+    0 0 40px oklch(0.55 0.24 25 / 0.3);
+}
+
+/* ========================================
+   BACKGROUND TEXTURES
+   ======================================== */
+
+/* Noise texture overlay */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, oklch(0.25 0.01 30) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.25 0.01 30) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Radial glow */
+.bg-glow-primary {
+  background: radial-gradient(
+    ellipse at center,
+    oklch(0.55 0.24 25 / 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.bg-glow-accent {
+  background: radial-gradient(
+    ellipse at center,
+    oklch(0.72 0.16 70 / 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* ========================================
+   CARD EFFECTS
+   ======================================== */
+
+/* Glass card effect */
+.glass-card {
+  background: oklch(0.12 0.012 30 / 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(0.25 0.015 30 / 0.5);
+}
+
+/* Elevated card with glow */
+.card-elevated {
+  background: oklch(0.12 0.012 30);
+  box-shadow: 
+    0 4px 24px -4px oklch(0 0 0 / 0.4),
+    0 0 0 1px oklch(0.25 0.015 30 / 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevated:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 40px -8px oklch(0 0 0 / 0.5),
+    0 0 0 1px oklch(0.55 0.24 25 / 0.3),
+    0 0 60px -20px oklch(0.55 0.24 25 / 0.2);
+}
+
+/* Premium border glow */
+.border-glow {
+  position: relative;
+}
+.border-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    oklch(0.55 0.24 25 / 0.5) 0%,
+    transparent 50%,
+    oklch(0.72 0.16 70 / 0.3) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.border-glow:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   ANIMATIONS - Core
+   ======================================== */
+
+/* Fade in up */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Scale in */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Slide in from right */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Reveal animation (staggered) */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ========================================
+   ANIMATIONS - Decorative
+   ======================================== */
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Spin slow */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Fire flicker */
+@keyframes fire-flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.98);
+  }
+  75% {
+    opacity: 0.95;
+    transform: scale(1.01);
+  }
+}
+
+.animate-fire {
+  animation: fire-flicker 2s ease-in-out infinite;
+}
+
+/* Shimmer loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    oklch(0.16 0.015 30) 0%,
+    oklch(0.22 0.018 30) 50%,
+    oklch(0.16 0.015 30) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* ========================================
+   SPLASH SCREEN ANIMATIONS
+   ======================================== */
+
+@keyframes logo-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-logo-reveal {
+  animation: logo-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes ring-expand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-ring-expand {
+  animation: ring-expand 2s ease-out infinite;
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+}
+
+.animate-progress {
+  animation: progress-fill 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ========================================
+   BUTTON EFFECTS
+   ======================================== */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    oklch(1 0 0 / 0.1) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-primary:hover {
+  box-shadow: 
+    0 8px 30px -8px oklch(0.55 0.24 25 / 0.5),
+    0 0 0 1px oklch(0.55 0.24 25 / 0.5);
+}
+
+/* ========================================
+   IMAGE EFFECTS
+   ======================================== */
+
+.image-zoom {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .image-zoom {
+  transform: scale(1.08);
+}
+
+.image-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    oklch(1 0 0 / 0.1) 45%,
+    oklch(1 0 0 / 0.2) 50%,
+    oklch(1 0 0 / 0.1) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+}
+
+.group:hover .image-shine::after {
+  transform: translateX(100%);
+}
+
+/* ========================================
+   FORM INPUTS
+   ======================================== */
+
+.input-premium {
+  background: oklch(0.14 0.012 30);
+  border: 2px solid oklch(0.22 0.015 30);
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-premium:focus {
+  border-color: oklch(0.55 0.24 25);
+  box-shadow: 
+    0 0 0 4px oklch(0.55 0.24 25 / 0.1),
+    0 0 20px -5px oklch(0.55 0.24 25 / 0.3);
+  outline: none;
+}
+
+/* ========================================
+   BADGE STYLES
+   ======================================== */
+
+.badge-fire {
+  background: linear-gradient(135deg, oklch(0.55 0.24 25 / 0.2), oklch(0.65 0.22 40 / 0.15));
+  border: 1px solid oklch(0.55 0.24 25 / 0.3);
+  color: oklch(0.75 0.2 30);
+}
+
+.badge-gold {
+  background: linear-gradient(135deg, oklch(0.72 0.16 70 / 0.2), oklch(0.65 0.14 60 / 0.15));
+  border: 1px solid oklch(0.72 0.16 70 / 0.3);
+  color: oklch(0.82 0.14 70);
+}
+
+.badge-emerald {
+  background: linear-gradient(135deg, oklch(0.6 0.18 160 / 0.2), oklch(0.55 0.16 150 / 0.15));
+  border: 1px solid oklch(0.6 0.18 160 / 0.3);
+  color: oklch(0.7 0.16 160);
+}
+
+/* ========================================
+   SCROLL BEHAVIORS
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky header shadow */
+.sticky-shadow {
+  box-shadow: 
+    0 4px 20px -4px oklch(0 0 0 / 0.3),
+    0 0 0 1px oklch(0.2 0.01 30 / 0.5);
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
