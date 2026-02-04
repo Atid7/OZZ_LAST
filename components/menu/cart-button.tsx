@@ -24,8 +24,8 @@ export function CartButton({ className, language = "fr" }: CartButtonProps) {
 
   return (
     <div className={cn(
-      "fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 pointer-events-none transition-opacity duration-300",
-      isModalOpen && "opacity-30"
+      "fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 pointer-events-none transition-all duration-300 ease-in-out",
+      isModalOpen ? "translate-y-full opacity-0" : "translate-y-0 opacity-100"
     )}>
       <div className="container mx-auto max-w-lg">
         <button
