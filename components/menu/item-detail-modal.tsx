@@ -342,21 +342,21 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
             <div className="mb-5">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <Droplets className="w-4 h-4 text-primary" />
-                  <h4 className="font-semibold text-sm text-foreground uppercase tracking-wide">
+                  <Droplets className="w-5 h-5 text-primary" />
+                  <h4 className="font-semibold text-base text-foreground uppercase tracking-wide">
                     {language === "fr" ? "Sauces" : "Sauces"}
                   </h4>
-                  <span className="text-xs text-destructive font-medium">*</span>
+                  <span className="text-sm text-destructive font-medium">*</span>
                 </div>
-                <span className="text-xs text-muted-foreground">
+                <span className="text-sm text-muted-foreground">
                   {totalModifiersSelected}/{MAX_SAUCES} {language === "fr" ? "total" : "total"}
                 </span>
               </div>
-              
+
               {/* Combined modifier requirement hint */}
-              <p className="text-xs text-muted-foreground mb-3">
-                {language === "fr" 
-                  ? `Choisissez entre ${MIN_SAUCES} et ${MAX_SAUCES} sauces/fromages au total` 
+              <p className="text-sm text-muted-foreground mb-3">
+                {language === "fr"
+                  ? `Choisissez entre ${MIN_SAUCES} et ${MAX_SAUCES} sauces/fromages au total`
                   : `Select between ${MIN_SAUCES} and ${MAX_SAUCES} sauces/cheeses total`}
               </p>
 
@@ -370,7 +370,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Included Sauces */}
               {includedSauces.length > 0 && (
                 <div className="mb-3">
-                  <p className="text-xs text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-2">
                     {language === "fr" ? "Incluses" : "Included"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -379,7 +379,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         key={sauce.sauceType}
                         onClick={() => toggleSauce(sauce.sauceType)}
                         className={cn(
-                          "px-3 py-2 rounded-xl text-xs font-medium transition-all duration-200",
+                          "px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                           "border hover:shadow-md",
                           selectedSauceTypes.has(sauce.sauceType)
                             ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20"
@@ -387,7 +387,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         )}
                       >
                         <span className="flex items-center gap-1.5">
-                          {selectedSauceTypes.has(sauce.sauceType) && <Check className="w-3 h-3" />}
+                          {selectedSauceTypes.has(sauce.sauceType) && <Check className="w-4 h-4" />}
                           {getSauceName(sauce)}
                         </span>
                       </button>
@@ -399,7 +399,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Extra Sauces */}
               {extraSauces.length > 0 && (
                 <div>
-                  <p className="text-xs text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-2">
                     {language === "fr" ? "Extras" : "Extras"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -408,7 +408,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         key={sauce.sauceType}
                         onClick={() => toggleSauce(sauce.sauceType)}
                         className={cn(
-                          "px-3 py-2 rounded-xl text-xs font-medium transition-all duration-200",
+                          "px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                           "border hover:shadow-md",
                           selectedSauceTypes.has(sauce.sauceType)
                             ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20"
@@ -416,7 +416,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         )}
                       >
                         <span className="flex items-center gap-1.5">
-                          {selectedSauceTypes.has(sauce.sauceType) && <Check className="w-3 h-3" />}
+                          {selectedSauceTypes.has(sauce.sauceType) && <Check className="w-4 h-4" />}
                           {getSauceName(sauce)}
                           {(sauce.extraCost ?? 0) > 0 && (
                             <span className="text-primary font-semibold">
@@ -436,8 +436,8 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
           {item.cheeses && item.cheeses.length > 0 && (
             <div className="mb-5">
               <div className="flex items-center gap-2 mb-3">
-                <CircleDot className="w-4 h-4 text-amber-500" />
-                <h4 className="font-semibold text-sm text-foreground uppercase tracking-wide">
+                <CircleDot className="w-5 h-5 text-amber-500" />
+                <h4 className="font-semibold text-base text-foreground uppercase tracking-wide">
                   {language === "fr" ? "Fromages" : "Cheese"}
                 </h4>
               </div>
@@ -445,7 +445,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Included Cheeses */}
               {includedCheeses.length > 0 && (
                 <div className="mb-3">
-                  <p className="text-xs text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-2">
                     {language === "fr" ? "Inclus" : "Included"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -454,7 +454,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         key={cheese.cheeseType}
                         onClick={() => toggleCheese(cheese.cheeseType)}
                         className={cn(
-                          "px-3 py-2 rounded-xl text-xs font-medium transition-all duration-200",
+                          "px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                           "border hover:shadow-md",
                           selectedCheeseTypes.has(cheese.cheeseType)
                             ? "bg-amber-500 text-amber-950 border-amber-500 shadow-md shadow-amber-500/20"
@@ -462,7 +462,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         )}
                       >
                         <span className="flex items-center gap-1.5">
-                          {selectedCheeseTypes.has(cheese.cheeseType) && <Check className="w-3 h-3" />}
+                          {selectedCheeseTypes.has(cheese.cheeseType) && <Check className="w-4 h-4" />}
                           {getCheeseName(cheese)}
                         </span>
                       </button>
@@ -474,7 +474,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Extra Cheeses */}
               {extraCheeses.length > 0 && (
                 <div>
-                  <p className="text-xs text-muted-foreground mb-2">
+                  <p className="text-sm text-muted-foreground mb-2">
                     {language === "fr" ? "Extras" : "Extras"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -483,7 +483,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         key={cheese.cheeseType}
                         onClick={() => toggleCheese(cheese.cheeseType)}
                         className={cn(
-                          "px-3 py-2 rounded-xl text-xs font-medium transition-all duration-200",
+                          "px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200",
                           "border hover:shadow-md",
                           selectedCheeseTypes.has(cheese.cheeseType)
                             ? "bg-amber-500 text-amber-950 border-amber-500 shadow-md shadow-amber-500/20"
@@ -491,7 +491,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
                         )}
                       >
                         <span className="flex items-center gap-1.5">
-                          {selectedCheeseTypes.has(cheese.cheeseType) && <Check className="w-3 h-3" />}
+                          {selectedCheeseTypes.has(cheese.cheeseType) && <Check className="w-4 h-4" />}
                           {getCheeseName(cheese)}
                           {(cheese.extraCost ?? 0) > 0 && (
                             <span className="text-amber-600 font-semibold">
