@@ -303,12 +303,12 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
         <div className="p-5 pb-8">
           {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-3">
-            <DialogTitle className="font-bold text-xl text-foreground leading-tight">
+            <DialogTitle className="font-bold text-2xl text-foreground leading-tight">
               {name}
             </DialogTitle>
             <div className="shrink-0 flex items-baseline gap-1">
               <span className="text-2xl font-bold text-primary">{formatPrice(itemPrice)}</span>
-              <span className="text-sm text-muted-foreground">{currency}</span>
+              <span className="text-base text-muted-foreground">{currency}</span>
             </div>
           </div>
 
@@ -332,7 +332,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
 
           {/* Description */}
           {description && (
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base text-muted-foreground leading-relaxed mb-6">
               {description}
             </p>
           )}
@@ -354,7 +354,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               </div>
 
               {/* Combined modifier requirement hint */}
-              <p className="text-sm text-muted-foreground mb-3">
+              <p className="text-base text-muted-foreground mb-3">
                 {language === "fr"
                   ? `Choisissez entre ${MIN_SAUCES} et ${MAX_SAUCES} sauces/fromages au total`
                   : `Select between ${MIN_SAUCES} and ${MAX_SAUCES} sauces/cheeses total`}
@@ -370,7 +370,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Included Sauces */}
               {includedSauces.length > 0 && (
                 <div className="mb-3">
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-base text-muted-foreground mb-2">
                     {language === "fr" ? "Incluses" : "Included"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -399,7 +399,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Extra Sauces */}
               {extraSauces.length > 0 && (
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-base text-muted-foreground mb-2">
                     {language === "fr" ? "Extras" : "Extras"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -445,7 +445,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Included Cheeses */}
               {includedCheeses.length > 0 && (
                 <div className="mb-3">
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-base text-muted-foreground mb-2">
                     {language === "fr" ? "Inclus" : "Included"}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -474,7 +474,7 @@ export function ItemDetailModal({ item, isOpen, onClose, language }: ItemDetailM
               {/* Extra Cheeses */}
               {extraCheeses.length > 0 && (
                 <div>
-                  <p className="text-sm text-muted-foreground mb-2">
+                  <p className="text-base text-muted-foreground mb-2">
                     {language === "fr" ? "Extras" : "Extras"}
                   </p>
                   <div className="flex flex-wrap gap-2">
