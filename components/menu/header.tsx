@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Clock, ChevronDown, Phone } from "lucide-react";
+import { MapPin, Clock, ChevronDown, Phone, Truck } from "lucide-react";
 import { type Language } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import type { Restaurant } from "@/lib/types";
