@@ -258,25 +258,6 @@ export function CheckoutModal({ language }: CheckoutModalProps) {
 
             {/* Form */}
             <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 custom-scrollbar">
-              {/* Delivery Promo Banner */}
-              <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500/10 via-primary/10 to-emerald-500/10 border border-emerald-500/20 p-4">
-                <div className="relative flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
-                    <Truck className="w-5 h-5 text-emerald-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-foreground mb-0.5">
-                      {language === "fr" ? "Livraison gratuite" : "Free delivery"}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {language === "fr"
-                        ? `À partir de 20.00 ${currency} • Profitez-en !`
-                        : `From 20.00 ${currency} • Enjoy!`}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
               {/* Order Type Toggle */}
               <div>
                 <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
