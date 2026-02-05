@@ -257,31 +257,52 @@ export function CheckoutModal({ language }: CheckoutModalProps) {
                 <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
                   {language === "fr" ? "Type de commande" : "Order Type"}
                 </label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   {[
                     { type: "DINE_IN", icon: UtensilsCrossed, labelFr: "Sur place", labelEn: "Dine In" },
                     { type: "TAKEAWAY", icon: Store, labelFr: "A emporter", labelEn: "Takeaway" },
-                  ].map(({ type, icon: Icon, labelFr, labelEn }) => (
-                    <button
-                      key={type}
-                      onClick={() => setOrderDetails({ orderType: type as any })}
-                      className={cn(
-                        "flex flex-col items-center justify-center gap-2 py-4 rounded-xl border-2 font-bold text-[10px] uppercase tracking-wide transition-all duration-300",
-                        orderDetails.orderType === type
-                          ? "border-primary bg-primary/10 text-primary shadow-lg"
-                          : "border-border bg-secondary/30 text-muted-foreground hover:border-border hover:bg-secondary/60"
-                      )}
-                      style={{
-                        boxShadow: orderDetails.orderType === type 
-                          ? "0 4px 20px -4px oklch(0.55 0.24 25 / 0.3)" 
-                          : "none"
-                      }}
-                    >
-                      <Icon className="w-5 h-5" />
-                      {language === "fr" ? labelFr : labelEn}
-                    </button>
-                  ))}
+                    { type: "DELIVERY", icon: Truck, labelFr: "Livraison", labelEn: "Delivery" },
+                  ].map(({ type, icon: Icon, labelFr, labelEn }) => {
+                    const isDelivery = type === "DELIVERY";
+                    const isDeliveryDisabled = isDelivery && totalPrice < 20;
+
+                    return (
+                      <button
+                        key={type}
+                        onClick={() => !isDeliveryDisabled && setOrderDetails({ orderType: type as any })}
+                        disabled={isDeliveryDisabled}
+                        className={cn(
+                          "flex flex-col items-center justify-center gap-2 py-4 rounded-xl border-2 font-bold text-[10px] uppercase tracking-wide transition-all duration-300",
+                          isDeliveryDisabled && "opacity-50 cursor-not-allowed",
+                          orderDetails.orderType === type
+                            ? "border-primary bg-primary/10 text-primary shadow-lg"
+                            : "border-border bg-secondary/30 text-muted-foreground hover:border-border hover:bg-secondary/60"
+                        )}
+                        style={{
+                          boxShadow: orderDetails.orderType === type
+                            ? "0 4px 20px -4px oklch(0.55 0.24 25 / 0.3)"
+                            : "none"
+                        }}
+                      >
+                        <Icon className="w-5 h-5" />
+                        {language === "fr" ? labelFr : labelEn}
+                        {isDelivery && (
+                          <span className="text-[9px] font-semibold text-emerald-500">
+                            {language === "fr" ? "Gratuit" : "Free"}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
+                {totalPrice < 20 && (
+                  <p className="text-xs text-muted-foreground mt-2 flex items-center gap-1">
+                    <Truck className="w-3.5 h-3.5" />
+                    {language === "fr"
+                      ? `Livraison disponible à partir de 20.00 ${currency}`
+                      : `Delivery available from 20.00 ${currency}`}
+                  </p>
+                )}
               </div>
 
               {/* Name Input */}
