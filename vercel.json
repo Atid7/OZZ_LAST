@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/oz-user_39d"
+    },
+    {
+      "source": "/:path((?!oz-user_39d).*)",
+      "destination": "/oz-user_39d/:path"
+    }
+  ]
+}
