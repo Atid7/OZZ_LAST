@@ -155,6 +155,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const payload: CreateOrderPayload = {
         customerName: orderDetails.name,
         customerPhone: orderDetails.phone || undefined,
+        customerAddress: orderDetails.address || undefined,
         type: orderDetails.orderType,
         subtotal: total,
         tax: 0,

@@ -94,6 +94,7 @@ export async function fetchMenu(slug: string) {
 export interface CreateOrderPayload {
   customerName: string;
   customerPhone?: string;
+  customerAddress?: string;
   type: "DINE_IN" | "TAKEAWAY" | "DELIVERY";
   subtotal: number;
   tax: number;
