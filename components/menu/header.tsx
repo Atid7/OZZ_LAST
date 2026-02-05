@@ -168,14 +168,6 @@ export function Header({
                   {language === "fr" ? "COMMANDER" : "ORDER NOW"}
                   <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
                 </button>
-
-                <a
-                  href="tel:0951342463"
-                  className="flex items-center gap-2 px-5 py-3 bg-card/60 backdrop-blur-sm border border-border/50 text-foreground font-medium text-sm rounded-full transition-all duration-300 hover:border-foreground/30"
-                >
-                  <Phone className="w-4 h-4" />
-                  09 51 34 24 63
-                </a>
               </div>
 
               {/* Quick Info Pills */}
@@ -191,9 +183,9 @@ export function Header({
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <Truck className="w-4 h-4 text-emerald-500" />
                   <span className="text-emerald-400 font-medium">
-                    {language === "fr" ? "En ligne" : "Online"}
+                    {language === "fr" ? "Livraison gratuite dès 20€" : "Free delivery from 20€"}
                   </span>
                 </div>
               </div>

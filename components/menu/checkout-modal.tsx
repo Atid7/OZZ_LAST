@@ -106,10 +106,16 @@ export function CheckoutModal({ language }: CheckoutModalProps) {
     if (!orderDetails.name.trim()) {
       newErrors.name = language === "fr" ? "Nom requis" : "Name required";
     }
+
     if (!orderDetails.phone.trim()) {
       newErrors.phone = language === "fr" ? "Telephone requis" : "Phone required";
     } else if (!/^[0-9+\s-]{8,}$/.test(orderDetails.phone)) {
       newErrors.phone = language === "fr" ? "Numero invalide" : "Invalid number";
+    }
+
+    // Require address for delivery orders
+    if (orderDetails.orderType === "DELIVERY" && !orderDetails.address?.trim()) {
+      newErrors.address = language === "fr" ? "Adresse requise" : "Address required";
     }
 
     setErrors(newErrors);
@@ -252,6 +258,25 @@ export function CheckoutModal({ language }: CheckoutModalProps) {
 
             {/* Form */}
             <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 custom-scrollbar">
+              {/* Delivery Promo Banner */}
+              <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-emerald-500/10 via-primary/10 to-emerald-500/10 border border-emerald-500/20 p-4">
+                <div className="relative flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
+                    <Truck className="w-5 h-5 text-emerald-500" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-foreground mb-0.5">
+                      {language === "fr" ? "Livraison gratuite" : "Free delivery"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {language === "fr"
+                        ? `À partir de 20.00 ${currency} • Profitez-en !`
+                        : `From 20.00 ${currency} • Enjoy!`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Order Type Toggle */}
               <div>
                 <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
@@ -350,6 +375,31 @@ export function CheckoutModal({ language }: CheckoutModalProps) {
                   <p className="text-xs text-destructive mt-2 font-medium">{errors.phone}</p>
                 )}
               </div>
+
+              {/* Address Input - Only for Delivery */}
+              {orderDetails.orderType === "DELIVERY" && (
+                <div>
+                  <label className="block text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">
+                    {language === "fr" ? "Adresse de livraison" : "Delivery Address"} *
+                  </label>
+                  <div className="relative">
+                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <input
+                      type="text"
+                      value={orderDetails.address || ""}
+                      onChange={(e) => setOrderDetails({ address: e.target.value })}
+                      placeholder={language === "fr" ? "123 Rue de la Paix, 76800" : "123 Peace Street, 76800"}
+                      className={cn(
+                        "w-full input-premium py-4 pl-12 pr-4 text-foreground placeholder:text-muted-foreground/50",
+                        errors.address && "border-destructive focus:border-destructive"
+                      )}
+                    />
+                  </div>
+                  {errors.address && (
+                    <p className="text-xs text-destructive mt-2 font-medium">{errors.address}</p>
+                  )}
+                </div>
+              )}
 
               {/* Notes Input */}
               <div>
