@@ -17,6 +17,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/',
+        destination: '/oz-user_39d',
+      },
+    ];
+  },
 }
 
 export default nextConfig;
