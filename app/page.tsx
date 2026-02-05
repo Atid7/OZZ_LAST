@@ -1,7 +1,5 @@
-import { SplashScreenStatic } from "@/components/menu/splash-screen-static";
+import { redirect } from 'next/navigation';
 
 export default function HomePage() {
-    return (
-       <SplashScreenStatic />
-    );
+    redirect('/oz-user_39d');
 }
